@@ -1,0 +1,6 @@
+{
+  "name": "Слобода",
+  "description": "Креативний мінімалістичний онлайн-радіоплеєр «Palas M.D. Live» у тактичних кольорах ЗСУ з перевіреними прямими ефірами, записом трансляцій та групуванням за регіонами і звичками.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

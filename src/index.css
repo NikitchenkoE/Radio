@@ -1,0 +1,348 @@
+@import "tailwindcss";
+
+:root,
+[data-theme="day"] {
+  /* Білий фон 1,5% сірості: #fafaf9 (98.5% lightness, pure modern studio look) */
+  --bg-app: #fafaf9;
+  --bg-card: #ffffff;
+  --bg-card-hover: #f4f6f6;
+  --bg-subtle: #f0f3f3;
+  --bg-input: #ffffff;
+  --border-color: #e2e8e8;
+  --border-strong: #004643;
+  --border-subtle: #edf2f2;
+  --text-main: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #94a3b8;
+
+  /* Cyprus #004643 Brand Palette */
+  --accent-cyprus: #004643;
+  --accent-cyprus-hover: #003330;
+  --accent-cyprus-light: #e6f0ef;
+  --accent-cyprus-border: rgba(0, 70, 67, 0.25);
+
+  /* Legacy aliases mapped to Cyprus */
+  --accent-erotic: #004643;
+  --accent-erotic-hover: #003330;
+  --accent-gold: #004643;
+
+  --header-bg: rgba(250, 250, 249, 0.94);
+  --player-bg: rgba(255, 255, 255, 0.98);
+  --modal-bg: #ffffff;
+  --btn-primary-bg: #004643;
+  --btn-primary-text: #ffffff;
+  --btn-secondary-bg: #f0f4f4;
+  --btn-secondary-text: #004643;
+  --badge-bg: #f0f4f4;
+  --badge-text: #004643;
+  --badge-border: #d4e3e2;
+  --scrollbar-track: #f0f3f3;
+  --scrollbar-thumb: #cbd5e1;
+}
+
+[data-theme="night"] {
+  --bg-app: #081211; /* Deep Cyprus Obsidian */
+  --bg-card: #0e1e1d;
+  --bg-card-hover: #142a28;
+  --bg-subtle: #122322;
+  --bg-input: #0e1e1d;
+  --border-color: #1a3835;
+  --border-strong: #00a896;
+  --border-subtle: #142d2b;
+  --text-main: #f8fafc;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+
+  --accent-cyprus: #00a896;
+  --accent-cyprus-hover: #02c39a;
+  --accent-cyprus-light: rgba(0, 168, 150, 0.15);
+  --accent-cyprus-border: rgba(0, 168, 150, 0.35);
+
+  --accent-erotic: #00a896;
+  --accent-erotic-hover: #02c39a;
+  --accent-gold: #00a896;
+
+  --header-bg: rgba(8, 18, 17, 0.94);
+  --player-bg: rgba(14, 30, 29, 0.98);
+  --modal-bg: #0e1e1d;
+  --btn-primary-bg: #004643;
+  --btn-primary-text: #ffffff;
+  --btn-secondary-bg: #142a28;
+  --btn-secondary-text: #f8fafc;
+  --badge-bg: #142a28;
+  --badge-text: #e6f0ef;
+  --badge-border: #1f423f;
+  --scrollbar-track: #081211;
+  --scrollbar-thumb: #1a3835;
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    overflow-x: hidden;
+    max-width: 100vw;
+    width: 100%;
+  }
+
+  body {
+    background-color: var(--bg-app);
+    color: var(--text-main);
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    overflow-x: hidden;
+    max-width: 100vw;
+    width: 100%;
+    letter-spacing: -0.01em;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+}
+
+/* Theme helper classes & 1% micro-roundedness (~2.5px - 3px) */
+.card-bg,
+.modal-bg,
+.player-bg,
+.subtle-bg,
+.input-bg,
+.btn-primary,
+.btn-secondary,
+.badge-theme,
+button,
+input,
+select,
+textarea {
+  border-radius: 3px;
+}
+
+.app-bg {
+  background-color: var(--bg-app);
+  color: var(--text-main);
+}
+
+.card-bg {
+  background-color: var(--bg-card);
+  color: var(--text-main);
+  border-color: var(--border-color);
+}
+
+.subtle-bg {
+  background-color: var(--bg-subtle);
+  color: var(--text-secondary);
+}
+
+.header-bg {
+  background-color: var(--header-bg);
+  border-color: var(--border-color);
+}
+
+.player-bg {
+  background-color: var(--player-bg);
+  border-color: var(--border-color);
+}
+
+.modal-bg {
+  background-color: var(--modal-bg);
+  color: var(--text-main);
+  border-color: var(--border-color);
+}
+
+.input-bg {
+  background-color: var(--bg-input);
+  color: var(--text-main);
+  border-color: var(--border-color);
+}
+
+.btn-primary {
+  background-color: var(--btn-primary-bg);
+  color: var(--btn-primary-text);
+  border: 1px solid transparent;
+  transition: all 0.15s ease;
+}
+
+.btn-primary:hover {
+  background-color: var(--accent-cyprus-hover);
+  filter: brightness(1.05);
+}
+
+.btn-secondary {
+  background-color: var(--btn-secondary-bg);
+  color: var(--btn-secondary-text);
+  border-color: var(--border-color);
+  transition: all 0.15s ease;
+}
+
+.badge-theme {
+  background-color: var(--badge-bg);
+  color: var(--badge-text);
+  border-color: var(--badge-border);
+}
+
+.text-main {
+  color: var(--text-main);
+}
+
+.text-sub {
+  color: var(--text-secondary);
+}
+
+.text-muted-theme {
+  color: var(--text-muted);
+}
+
+.border-theme {
+  border-color: var(--border-color);
+}
+
+/* Cyprus #004643 Colors & Utilities */
+.bg-cyprus {
+  background-color: #004643 !important;
+  color: #ffffff !important;
+}
+
+.hover\:bg-cyprus-hover:hover {
+  background-color: #003330 !important;
+}
+
+.text-cyprus {
+  color: #004643 !important;
+}
+
+.border-cyprus {
+  border-color: #004643 !important;
+}
+
+.bg-cyprus-light {
+  background-color: var(--accent-cyprus-light) !important;
+  color: var(--accent-cyprus) !important;
+}
+
+.border-cyprus-border {
+  border-color: var(--accent-cyprus-border) !important;
+}
+
+/* Backwards compatibility aliases */
+.text-erotic {
+  color: var(--accent-cyprus);
+}
+
+.border-erotic {
+  border-color: var(--accent-cyprus);
+}
+
+.bg-erotic {
+  background-color: var(--accent-cyprus);
+  color: #ffffff;
+}
+
+.hover\:bg-erotic:hover {
+  background-color: var(--accent-cyprus-hover);
+}
+
+.text-champagne {
+  color: var(--accent-cyprus);
+}
+
+.border-champagne {
+  border-color: var(--accent-cyprus);
+}
+
+.bg-champagne {
+  background-color: var(--accent-cyprus);
+  color: #ffffff;
+}
+
+/* Modern smooth scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--scrollbar-track);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  filter: brightness(0.8);
+}
+
+/* Animations requested by user: slide-in-up & fade-out for PlayerBar */
+@keyframes slideInUp {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+}
+
+.slide-in-up {
+  animation: slideInUp 0.32s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.fade-out {
+  animation: fadeOut 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Animated Equalizer Wave Bars for Live Radio & Studio */
+@keyframes soundWave {
+  0%, 100% {
+    height: 3px;
+  }
+  50% {
+    height: 18px;
+  }
+}
+
+.animate-wave-bar-1 {
+  animation: soundWave 0.75s ease-in-out infinite alternate;
+}
+.animate-wave-bar-2 {
+  animation: soundWave 0.52s ease-in-out infinite 0.15s alternate;
+}
+.animate-wave-bar-3 {
+  animation: soundWave 0.88s ease-in-out infinite 0.3s alternate;
+}
+.animate-wave-bar-4 {
+  animation: soundWave 0.62s ease-in-out infinite 0.2s alternate;
+}
+.animate-wave-bar-5 {
+  animation: soundWave 0.78s ease-in-out infinite 0.35s alternate;
+}
+
+/* Ambient Pulsing Aura for active broadcast */
+@keyframes auraPulse {
+  0% {
+    transform: scale(0.96);
+    opacity: 0.7;
+  }
+  50% {
+    transform: scale(1.18);
+    opacity: 0.2;
+  }
+  100% {
+    transform: scale(0.96);
+    opacity: 0.7;
+  }
+}
+
+.animate-aura-pulse {
+  animation: auraPulse 2.2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
